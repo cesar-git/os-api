@@ -53,6 +53,6 @@ public class OsResource {
 	@PutMapping //FEITO DE FORMA DIFERENTE DA ATUALIZAÇÃO DE TÉCNICO
 	public ResponseEntity<OSDTO> update(@Valid @RequestBody OSDTO obj) {
 		obj = new OSDTO(osService.update(obj));
-		return ResponseEntity.ok().body(obj);
+		return ResponseEntity.ok().body(obj);  
 	}
 }
