@@ -53,9 +53,13 @@ public class OsService {
 		OS novaOs = new OS();
 		novaOs.setId(dto.getId());
 		novaOs.setObservacoes(dto.getObservacoes());
-		novaOs.setPrioridade(Prioridade.toEnum(dto.getPrioridade()));
-		novaOs.setStatus(Status.toEnum(dto.getStatus()));
-		
+		/*
+		 novaOs.setPrioridade(Prioridade.toEnum(dto.getPrioridade()));
+		 novaOs.setStatus(Status.toEnum(dto.getStatus()));
+		*/
+		novaOs.setPrioridade(dto.getPrioridade());
+		novaOs.setStatus(Status.toEnum(dto.getStatus().getCod()));
+		 
 		Tecnico tecnico = tecnicoService.findById(dto.getTecnico());		
 		Cliente cliente = clienteService.findById(dto.getCliente());
 		
